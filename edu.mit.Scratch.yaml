@@ -29,7 +29,7 @@ modules:
         CHROMEDRIVER_SKIP_DOWNLOAD: 'true'
         # FIXME: We use openssl-legacy-provider as a workaround to appease NodeJS 16 with our
         # current set of dependencies. We should remove this as soon as possible.
-        NODE_OPTIONS: '--max-old-space-size=4096 --openssl-legacy-provider'
+        #NODE_OPTIONS: '--max-old-space-size=4096 --openssl-legacy-provider'
         # We use the ignore-scripts option to skip the prepublish script for scratch-gui. This
         # means the following doesn't run:
         # <https://github.com/scratchfoundation/scratch-gui/blob/develop/scripts/prepublish.mjs#L113-L126>
@@ -45,7 +45,7 @@ modules:
         sed -i '/\/src/d' flatpak-node/git-packages/scratch-gui-*/.npmignore
 
       # Install the main dependencies.
-      - 'flatpak-node/patch.sh'
+      #- 'flatpak-node/patch.sh'
       - 'npm install --offline'
 
       # Install scratch-gui's dependencies (most of this hackage is needed because scratch-gui's
